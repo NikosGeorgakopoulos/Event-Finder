@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta name = "viewport"
+                  content = "initial-scale = 1.0,user-scalable= no"/>
+            <style type = "text/css">
+            html {height: 100%}
+            body {height: 100%;margin: 0;padding: 0}
+            #mapDiv{height: 100%}
+            </style>
+            <script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDLJE925jwSVOSPdjNfGCclX-K_xfzojw4">            
+            </script>
+
+            <script type = "text/javascript">            
+            function initialize(){
+                var position = new google.maps.LatLng(37.980600,23.725300);
+                var position2 = new google.maps.LatLng(37.980700,23.725400);
+
+                var mapOptions = { 
+                    center: position, 
+                    zoom: 15,
+                    disableDefaultUI : true                    
+                    };
+
+                var map = new google.maps.Map(document.getElementById("mapDiv"),mapOptions);
+
+                //var imageBounds = new google.maps.LatLngBounds(position,position2);
+
+                //var historicalOverlay = new google.maps.GroundOverlay('C:/Users/Administrator/Desktop/Athens.jpg',imageBounds);
+
+                //historicalOverlay.setMap(map)
+
+
+                // Add a marker as Geo JSON data
+
+                function addGeoJSONDataLayer(map){
+                    map.data.loadGeoJson()
+                }
+
+                // Marker Addition
+
+                // var centerMarker = new google.maps.Marker({                        
+                //         position : position,
+                //         map : map,
+                //         title : "Test Marker"
+                // });
+                
+                //Circle Creation
+
+                // var circle = new google.maps.Circle({
+                //         map:map,
+                //         center : position,
+                //         fillColor : "#92D050",
+                //         fillOpacity : 0.6,
+                //         strokeColor : "#92D050",
+                //         strokeOpacity : 0.8,
+                //         strokeWeight : 2
+                // });
+                // circle.setRadius(58);
+
+
+            //    var kmlLayer = new google.maps.kmlLayer();
+            //    kmlLayer.setMap(map);
+                
+            }
+            google.maps.event.addDomListener(window,"load",initialize);
+            </script>
+        </head>
+        <body>
+            <div id = "mapDiv">
+
+            </div>
+        </body>
+    </html>
